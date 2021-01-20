@@ -11,4 +11,14 @@ float:left;width:150px;margin-left:20px;text-align:center;
 float:left;width:150px;margin-left:20px;;border:1px solid #DEDEDE; border-radius: 5px;
 }
 .abs-150 .abs-30{
-height:30px; background-color:#D
+height:30px; background-color:#DEDEDE;line-height:30px;text-align:center;
+}
+.abs-150 .abs-50{
+height:50px;line-height:50px;text-align:center;
+}
+
+.sad_txt {
+	color:red;
+}
+
+.ha
