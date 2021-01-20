@@ -5,4 +5,10 @@
 	margin-right:auto;
 }
 .abs-img{
-float:left;width:150px;margin-left:20px;text-a
+float:left;width:150px;margin-left:20px;text-align:center;
+}
+.abs-150{
+float:left;width:150px;margin-left:20px;;border:1px solid #DEDEDE; border-radius: 5px;
+}
+.abs-150 .abs-30{
+height:30px; background-color:#D
