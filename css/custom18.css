@@ -21,4 +21,24 @@ height:50px;line-height:50px;text-align:center;
 	color:red;
 }
 
-.ha
+.happy_txt {
+	color:green;
+}
+
+.expand {
+	width:100%;
+}
+
+.float_left {
+	float:left;
+}
+
+.float_right {
+	float:right;
+}
+
+.bot_gap {
+	margin-bottom:10px;
+}
+
+.top_g
