@@ -58,4 +58,24 @@ height:50px;line-height:50px;text-align:center;
 }
 
 .larger {
-	font-size:125
+	font-size:125%;
+}
+
+.no_border {
+    border:none;
+}
+
+.no_shadow {
+    box-shadow:none;
+}
+
+.no_show {
+	visibility:hidden;
+}
+
+.no_display {
+	display:none;
+}
+
+.no_margin {
+	margin:0px;
