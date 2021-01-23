@@ -79,3 +79,20 @@ height:50px;line-height:50px;text-align:center;
 
 .no_margin {
 	margin:0px;
+}
+
+.clear {
+	clear:both;
+}
+
+.text_center {
+	text-align:center;
+}
+
+div.center {
+	margin-left:auto;
+	margin-right:auto;
+}
+
+img.center, button.center,
+canvas.center, input.center 
