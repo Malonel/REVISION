@@ -123,4 +123,20 @@ img {
 }
 
 #sort_select {
-	width
+	width:105px;
+}
+
+#filter_select {
+	width:90px;
+}
+
+#txlist_form {
+	float:right;
+	margin-top:20px;
+	margin-bottom:20px;
+	margin-right:5px;
+}
+
+.main_info {
+	color:green;
+	font-size:70%;
