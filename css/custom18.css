@@ -140,3 +140,11 @@ img {
 .main_info {
 	color:green;
 	font-size:70%;
+	font-weight:normal;
+}
+
+.orphan_info {
+	color:red;
+	font-size:70%;
+	font-weight:normal;
+}
