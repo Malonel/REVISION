@@ -6,4 +6,10 @@ if (isset($index_call)) {
     } else {
 	  echo "<p>The requested page was not found, sorry! :(</p>";  
     }
-  } el
+  } else {
+    require_once('./inc/pages/home.inc.php');
+  }
+} else {
+  echo "error: invalid page access";
+}
+?>
