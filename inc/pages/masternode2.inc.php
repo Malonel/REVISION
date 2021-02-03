@@ -1,39 +1,36 @@
 
-<center><h1><?php echo $curr_name;?>全网主节点</h1></center>
+<center><h1>金融股全网主节点</h1></center>
 <br />
 <?php
-	error_reporting(0);
-	$mcn= 50000; //masternode coin number
-	$mrw= 56;  //masternode reward
-	$url="http://coin78.com/api/trade/ticker?market=jrg_cny";
-	$price=get($url);
-	//$price = 0.04;
+	//$url="http://www.jys100.com/api/trade/ticker?market=syc_cny";
+	//$price=get($url);
+	$price = 0.04;
 	$count = $_SESSION[$rpc_client]->masternode("count");
 	if($count == 0) 
 		$count=1;
-	$val=$price*$count*$mcn;
-	$profit=round($price*$mrw*1440/$count);
-	$pnh=round(365*$mrw*1440*100/$count/$mcn)."%";//年化收益
+	$val=$price*$count*200000;
+	$profit=round($price*32*1440/$count);
+	$pnh=round(365*32*1440*100/$count/200000)."%";//年化收益
 	echo "<p>当前全网在线主节点:<b><font color='red' size='16px'>".$count."</b></font>个,价值:<b><font color='red' size='16px'>".$val."</b></font>元; 每主节点收益(24h): <b><font color='red' size='16px'>".$profit."</b></font>元;平均年化收益率: <b><font color='red' size='16px'>".$pnh."</b></font></p>";	
 	function get($url){
 		if(function_exists('file_get_contents'))
 		{
 			$file_contents = file_get_contents($url);
 		}
-		$res1 = explode(':',$file_contents);
-		$m=$res1[2];
-		$res2 = explode(',',$m);
-		$n=$res2[0];
+		$res1 = explode(',',$file_contents);
+		$m=$res1[1];
+		$res2 = explode(':',$m);
+		$n=$res2[1];
 		$p1=substr($n,0,-1);
-		$p2=substr($p1,3);
-		$p= round(floatval($p2),3)/100000000;		
+		$p2=substr($n,1);
+		$p= round(floatval($p2),3);	
 		return $p;	
 	}
-	$nh = round(365*$mrw*1440*100/$count/$mcn,2);//年化收益
-	$pnum=$price*$mcn;
-	$dnum=round(1*1*$price*$mrw*1440/$count,2);
-	$mnum=round(30*1*$price*$mrw*1440/$count,2);
-	$ynum=round(365*1*$price*$mrw*1440/$count,2);
+	$nh = round(365*32*1440*100/$count/200000,2);//年化收益
+	$pnum=$price*200000;
+	$dnum=round(1*1*$price*32*1440/$count,2);
+	$mnum=round(30*1*$price*32*1440/$count,2);
+	$ynum=round(365*1*$price*32*1440/$count,2);
 	echo "<table class='table table-striped table-condensed'>
 	<tr>
 		<th width='80px' >主节点数量</th>		
@@ -48,7 +45,7 @@
 	</tr>
 	<tr >
 		<td ><input id='node' style='width:50px;height:12px;' type='text' value='1' onKeyUp='mycount1(this.value)'></td>
-		<td id='cnum'>".$mcn."</td>
+		<td id='cnum'>200000</td>
 		<td id='pnum'>".$pnum."</td>
 		<td id='dnum'>".$dnum."</td>
 		<td id='mnum'>".$mnum."</td>
@@ -105,56 +102,3 @@ if (empty($nodes)) {
 		   
 	}
 	}
-
-
-?>
-</table>
-
-</div>
-
-<script language="JavaScript">
-
-	setTimeout("self.location.reload();",600000);   
-
-</script>  
-
-<script type="text/javascript">
-	var arr = new Array("","","","","","");
-	var pri=document.getElementById("pri").innerText;	
-	function mycount1(mynode){
-		var cou=document.getElementById("allnode").value;
-		var mcnj = 50000;
-		var mrwj = 56;
-		arr[0]= Math.round(mynode*mcnj);
-		arr[1]= Math.round(arr[0]*pri);
-		arr[2]= Math.floor(100*pri*mynode*mrwj*1440/cou)/100;
-		arr[3]= Math.floor(100*30*pri*mynode*mrwj*1440/cou)/100;
-		arr[4]= Math.floor(100*365*pri*mynode*mrwj*1440/cou)/100;
-		arr[5]= Math.floor(100*arr[4]*100/arr[1])/100;
-		document.getElementById("cnum").innerText=arr[0];
-		document.getElementById("pnum").innerText=arr[1];
-		document.getElementById("dnum").innerText=arr[2];
-		document.getElementById("mnum").innerText=arr[3];
-		document.getElementById("ynum").innerText=arr[4];
-		document.getElementById("nh").innerText=arr[5]+"%";
-	}
-	function mycount2(allnode){
-		var mynode=document.getElementById("node").value;
-		var mcnj = 50000;
-		var mrwj = 56;
-		arr[0]= Math.round(mynode*mcnj);
-		arr[1]= Math.round(arr[0]*pri);
-		arr[2]= Math.floor(100*pri*mynode*mrwj*1440/allnode)/100;;
-		arr[3]= Math.floor(100*30*pri*mynode*mrwj*1440/allnode)/100;;
-		arr[4]= Math.floor(100*365*pri*mynode*mrwj*1440/allnode)/100;;
-		arr[5]= Math.floor(100*arr[4]*100/arr[1])/100;;
-		document.getElementById("cnum").innerText=arr[0];
-		document.getElementById("pnum").innerText=arr[1];
-		document.getElementById("dnum").innerText=arr[2];
-		document.getElementById("mnum").innerText=arr[3];
-		document.getElementById("ynum").innerText=arr[4];
-		document.getElementById("nh").innerText=arr[5]+"%";
-	}
-	
-</script>  
-
