@@ -234,3 +234,54 @@ if (empty($_GET['q'])) { ?>
 	  $ginfo = $getinfo;
 	  unset($ginfo['balance']);
 	  unset($ginfo['proxy']);
+	  unset($ginfo['keypoololdest']);
+	  unset($ginfo['keypoolsize']);
+	  unset($ginfo['paytxfee']);
+	  header('Content-Type: application/json');
+	  echo json_encode($ginfo);
+      exit;
+    case 'txinfo': ////////////////////////////////////////////
+	  if (empty($_GET['arg1'])) {
+	    die('tx hash not specified');
+	  } else {
+        $tx_id = preg_replace("/[^a-f0-9]/", '', strtolower($_GET['arg1']));
+        $tinfo = $_SESSION[$rpc_client]->getrawtransaction($tx_id, 1);
+        header('Content-Type: application/json');
+	    echo json_encode($tinfo);
+        exit;
+	  }
+    case 'addressinfo': ////////////////////////////////////////////
+	  if (empty($_GET['arg1'])) {
+	    die('address not specified');
+	  } else {
+        $address = preg_replace("/[^a-z0-9]/i", '', $_GET['arg1']);
+        $confs = empty($_GET['arg2']) ? 1 : (int)$_GET['arg2'];
+        $ainfo = $_SESSION[$rpc_client]->listbalances($confs, array($address));
+	    unset($ainfo[0]['ours']);
+	    unset($ainfo[0]['account']);
+        header('Content-Type: application/json');
+        echo json_encode($ainfo[0]);
+        exit;
+	  }
+    case 'blockinfo': ////////////////////////////////////////////
+	  if (empty($_GET['arg1'])) {
+	    die('block hash not specified');
+	  } else {
+        $block = $_SESSION[$rpc_client]->getblock($_GET['arg1']);
+        header('Content-Type: application/json');
+        echo json_encode($block);
+        exit;
+	  }
+	case 'uptime': ////////////////////////////////////////////
+		$file_time = dirname(dirname(dirname(__FILE__)))."/db/curtime.txt";//更新时间
+		$upd_time =  file_get_contents($file_time);
+        echo $upd_time;
+        exit;
+    default: ////////////////////////////////////////////
+       die('unknown command');
+  }
+  if (rpc_error_check() && $result !== '') {
+    echo $result;
+  }
+}
+?>
