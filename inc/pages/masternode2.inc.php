@@ -102,3 +102,52 @@ if (empty($nodes)) {
 		   
 	}
 	}
+
+
+?>
+</table>
+
+</div>
+
+<script language="JavaScript">
+
+	setTimeout("self.location.reload();",600000);   
+
+</script>  
+
+<script type="text/javascript">
+	var arr = new Array("","","","","","");
+	var pri=document.getElementById("pri").innerText;	
+	function mycount1(mynode){
+		var cou=document.getElementById("allnode").value;
+		arr[0]= Math.round(mynode*200000);
+		arr[1]= Math.round(arr[0]*pri);
+		arr[2]= Math.floor(100*pri*mynode*32*1440/cou)/100;
+		arr[3]= Math.floor(100*30*pri*mynode*32*1440/cou)/100;
+		arr[4]= Math.floor(100*365*pri*mynode*32*1440/cou)/100;
+		arr[5]= Math.floor(100*arr[4]*100/arr[1])/100;
+		document.getElementById("cnum").innerText=arr[0];
+		document.getElementById("pnum").innerText=arr[1];
+		document.getElementById("dnum").innerText=arr[2];
+		document.getElementById("mnum").innerText=arr[3];
+		document.getElementById("ynum").innerText=arr[4];
+		document.getElementById("nh").innerText=arr[5]+"%";
+	}
+	function mycount2(allnode){
+		var mynode=document.getElementById("node").value;
+		arr[0]= Math.round(mynode*200000);
+		arr[1]= Math.round(arr[0]*pri);
+		arr[2]= Math.floor(100*pri*mynode*32*1440/allnode)/100;;
+		arr[3]= Math.floor(100*30*pri*mynode*32*1440/allnode)/100;;
+		arr[4]= Math.floor(100*365*pri*mynode*32*1440/allnode)/100;;
+		arr[5]= Math.floor(100*arr[4]*100/arr[1])/100;;
+		document.getElementById("cnum").innerText=arr[0];
+		document.getElementById("pnum").innerText=arr[1];
+		document.getElementById("dnum").innerText=arr[2];
+		document.getElementById("mnum").innerText=arr[3];
+		document.getElementById("ynum").innerText=arr[4];
+		document.getElementById("nh").innerText=arr[5]+"%";
+	}
+	
+</script>  
+
