@@ -21,4 +21,10 @@ if (empty($tx_ids)) {
 	  $tx[$key] = $_SESSION[$rpc_client]->getrawtransaction($value, 1);
 	  $total = '';
 	  
-	  foreach ($tx[$key]['vo
+	  foreach ($tx[$key]['vout'] as $k => $value) {
+		if (!isset($tx[$k]['limit'])) {
+		  $total = bcadd($total, remove_ep($value['value']));
+		}
+	  }
+	  
+	  echo "<tr><td><a href='./?tx=".$tx[$
