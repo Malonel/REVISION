@@ -14,4 +14,11 @@ if (empty($tx_ids)) {
   echo "<tr><td colspan='2'>当前内存池为空.</td></tr>";
 } else {
 
-	$tx = array(
+	$tx = array();
+
+	foreach ($tx_ids as $key => $value) {
+
+	  $tx[$key] = $_SESSION[$rpc_client]->getrawtransaction($value, 1);
+	  $total = '';
+	  
+	  foreach ($tx[$key]['vo
