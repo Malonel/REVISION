@@ -27,4 +27,10 @@ if (empty($tx_ids)) {
 		}
 	  }
 	  
-	  echo "<tr><td><a href='./?tx=".$tx[$
+	  echo "<tr><td><a href='./?tx=".$tx[$key]['txid'].
+		   "'>".$tx[$key]['txid']."</a></td><td>".
+		   $total.' '.$curr_code."</td></tr>";
+	}
+}
+?>
+</table>
