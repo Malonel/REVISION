@@ -14,4 +14,8 @@
 $peers = $_SESSION[$rpc_client]->getpeerinfo();
 
 if (empty($peers)) {
-  echo "<tr><td 
+  echo "<tr><td colspan='5'>There are currently 0 connected peers.</td></tr>";
+} else {
+	foreach ($peers as $key => $value) {
+      $ip_port = explode(':', $value["addr"]);
+	  echo "<
