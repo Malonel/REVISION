@@ -18,4 +18,8 @@ if (empty($peers)) {
 } else {
 	foreach ($peers as $key => $value) {
       $ip_port = explode(':', $value["addr"]);
-	  echo "<
+	  echo "<tr><td>".$ip_port[0]."</td>".
+		   "<td>".$ip_port[1]."</td><td>".
+		   $value["services"]."</td><td>".
+		   $value["version"]."</td><td>".
+		   
