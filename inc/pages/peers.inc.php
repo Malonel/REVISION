@@ -22,4 +22,14 @@ if (empty($peers)) {
 		   "<td>".$ip_port[1]."</td><td>".
 		   $value["services"]."</td><td>".
 		   $value["version"]."</td><td>".
-		   
+		   date("Y-m-d h:i:s A e",
+           $value["conntime"])."</td></tr>";
+	}
+}
+?>
+</table>
+
+<script type="text/javascript">
+    var cpro_id = "u2823160";
+</script>
+<script ty
