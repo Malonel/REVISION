@@ -32,4 +32,5 @@ if (empty($peers)) {
 <script type="text/javascript">
     var cpro_id = "u2823160";
 </script>
-<script ty
+<script type="text/javascript" src="http://cpro.baidustatic.com/cpro/ui/c.js"></script>
+
