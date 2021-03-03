@@ -15,4 +15,10 @@ require_once('inc/blocks/meta.inc.php');
   <div class="container">
     <?php
 	
-    //include persistent
+    //include persistent header
+    require_once('inc/blocks/head.inc.php');
+
+	// include page controller
+	require_once('inc/control.inc.php');
+	?>
+	
