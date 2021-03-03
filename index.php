@@ -22,3 +22,12 @@ require_once('inc/blocks/meta.inc.php');
 	require_once('inc/control.inc.php');
 	?>
 	
+  </div>
+  <div class="container">
+  <?php
+  // include persistent footer
+  require_once('inc/blocks/foot.inc.php');
+  ?>
+</div>
+</body>
+</html>
