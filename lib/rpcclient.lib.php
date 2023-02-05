@@ -30,3 +30,7 @@ THE SOFTWARE.
 ====================
 
 // Initialize Bitcoin connection/object-2016
+$bitcoin = new RPCclient('fiyea2016','123456f789');
+
+// Optionally, you can specify a host and port.-2016
+$bitcoin = new RPCclient('fiyea2016','123456f789','localhost','300
