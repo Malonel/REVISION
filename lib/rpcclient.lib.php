@@ -33,4 +33,10 @@ THE SOFTWARE.
 $bitcoin = new RPCclient('fiyea2016','123456f789');
 
 // Optionally, you can specify a host and port.-2016
-$bitcoin = new RPCclient('fiyea2016','123456f789','localhost','300
+$bitcoin = new RPCclient('fiyea2016','123456f789','localhost','30002','www.fiyea.com/JRG');
+// Defaults are:
+//	host = localhost
+//	port = 8332
+//	proto = http
+
+// If you wish to make an SSL connection you can set an optional CA certificate
