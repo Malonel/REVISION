@@ -39,4 +39,8 @@ $bitcoin = new RPCclient('fiyea2016','123456f789','localhost','30002','www.fiyea
 //	port = 8332
 //	proto = http
 
-// If you wish to make an SSL connection you can set an optional CA certificate
+// If you wish to make an SSL connection you can set an optional CA certificate or leave blank
+// This will set the protocol to HTTPS and some CURL flags
+$bitcoin->setSSL('/full/path/to/mycertificate.cert');
+
+// Make calls to bitcoind as methods for your object. Res
