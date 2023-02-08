@@ -43,4 +43,8 @@ $bitcoin = new RPCclient('fiyea2016','123456f789','localhost','30002','www.fiyea
 // This will set the protocol to HTTPS and some CURL flags
 $bitcoin->setSSL('/full/path/to/mycertificate.cert');
 
-// Make calls to bitcoind as methods for your object. Res
+// Make calls to bitcoind as methods for your object. Responses are returned as an array.
+// Examples:
+$bitcoin->getinfo();
+$bitcoin->getrawtransaction('0e3e2357e806b6cdb1f70b54c3a3a17b6714ee1f0e68bebb44a74b1efd512098',1);
+$bitcoin->getblock('000000
