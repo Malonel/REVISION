@@ -55,4 +55,8 @@ $bitcoin->getblock('000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8c
 // Example:
 echo $bitcoin->error;
 
-// T
+// The HTTP status code can be found in $this->status and will either be a valid HTTP status code or will be 0 if cURL was unable to connect.
+// Example:
+echo $bitcoin->status;
+
+*/
