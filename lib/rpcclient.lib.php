@@ -60,3 +60,11 @@ echo $bitcoin->error;
 echo $bitcoin->status;
 
 */
+
+class RPCclient {
+    // Configuration options
+    private $username;
+    private $password;
+    private $proto;
+    private $host;
+    private $p
