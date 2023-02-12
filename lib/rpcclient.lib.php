@@ -47,4 +47,6 @@ $bitcoin->setSSL('/full/path/to/mycertificate.cert');
 // Examples:
 $bitcoin->getinfo();
 $bitcoin->getrawtransaction('0e3e2357e806b6cdb1f70b54c3a3a17b6714ee1f0e68bebb44a74b1efd512098',1);
-$bitcoin->getblock('000000
+$bitcoin->getblock('000000000019d6689c085ae165831e934ff763ae46a2a6c172b3f1b60a8ce26f');
+
+// The full response (not usually needed) is stored in $this->response while the raw JSON is store
