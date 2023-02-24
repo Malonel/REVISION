@@ -75,4 +75,13 @@ class RPCclient {
     public $status;
     public $error;
     public $raw_response;
-    public $resp
+    public $response;
+
+    private $id = 0;
+
+    /**
+     * @param string $username
+     * @param string $password
+     * @param string $host
+     * @param int $port
+     * @
