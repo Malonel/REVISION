@@ -67,4 +67,12 @@ class RPCclient {
     private $password;
     private $proto;
     private $host;
-    private $p
+    private $port;
+    private $url;
+    private $CACertificate;
+
+    // Information and debugging
+    public $status;
+    public $error;
+    public $raw_response;
+    public $resp
