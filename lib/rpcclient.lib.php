@@ -102,4 +102,9 @@ class RPCclient {
     /**
      * @param string|null $certificate
      */
-    func
+    function setSSL($certificate = null) {
+        $this->proto         = 'https'; // force HTTPS
+        $this->CACertificate = $certificate;
+    }
+
+    function __call($method, 
