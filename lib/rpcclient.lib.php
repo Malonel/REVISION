@@ -92,4 +92,14 @@ class RPCclient {
         $this->password      = $password;
         $this->host          = $host;
         $this->port          = $port;
-        $th
+        $this->url           = $url;
+
+        // Set some defaults
+        $this->proto         = 'http';
+        $this->CACertificate = null;
+    }
+
+    /**
+     * @param string|null $certificate
+     */
+    func
