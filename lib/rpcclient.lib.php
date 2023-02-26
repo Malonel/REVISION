@@ -88,4 +88,8 @@ class RPCclient {
      * @param string $url
      */
     function __construct($username, $password, $host = 'localhost', $port = 30002, $url = null) {
-        $t
+        $this->username      = $username;
+        $this->password      = $password;
+        $this->host          = $host;
+        $this->port          = $port;
+        $th
