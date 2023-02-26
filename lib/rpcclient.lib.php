@@ -107,4 +107,10 @@ class RPCclient {
         $this->CACertificate = $certificate;
     }
 
-    function __call($method, 
+    function __call($method, $params) {
+        $this->status       = null;
+        $this->error        = null;
+        $this->raw_response = null;
+        $this->response     = null;
+
+       
