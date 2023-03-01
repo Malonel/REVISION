@@ -121,4 +121,10 @@ class RPCclient {
 
         // Build the request, it's ok that params might have any empty array
         $request = json_encode(array(
-            'method
+            'method' => $method,
+            'params' => $params,
+            'id'     => $this->id
+        ));
+
+        // Build the cURL session
+        $curl    = curl_init("{$this->proto}
