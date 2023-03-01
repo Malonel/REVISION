@@ -113,4 +113,8 @@ class RPCclient {
         $this->raw_response = null;
         $this->response     = null;
 
-       
+        // If no parameters are passed, this will be an empty array
+        $params = array_values($params);
+
+        // The ID should be unique for each call
+        $this->id++;
