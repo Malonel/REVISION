@@ -118,3 +118,7 @@ class RPCclient {
 
         // The ID should be unique for each call
         $this->id++;
+
+        // Build the request, it's ok that params might have any empty array
+        $request = json_encode(array(
+            'method
