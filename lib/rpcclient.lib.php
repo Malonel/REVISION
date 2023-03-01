@@ -127,4 +127,7 @@ class RPCclient {
         ));
 
         // Build the cURL session
-        $curl    = curl_init("{$this->proto}
+        $curl    = curl_init("{$this->proto}://{$this->username}:{$this->password}@{$this->host}:{$this->port}/{$this->url}");
+        $options = array(
+            CURLOPT_RETURNTRANSFER => TRUE,
+       
