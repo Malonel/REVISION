@@ -133,4 +133,8 @@ class RPCclient {
             CURLOPT_FOLLOWLOCATION => TRUE,
             CURLOPT_MAXREDIRS      => 10,
             CURLOPT_HTTPHEADER     => array('Content-type: application/json'),
-            CURLOP
+            CURLOPT_POST           => TRUE,
+            CURLOPT_POSTFIELDS     => $request
+        );
+
+        // This prevents users from getting the following warning when open
