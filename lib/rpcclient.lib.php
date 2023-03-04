@@ -139,4 +139,9 @@ class RPCclient {
 
         // This prevents users from getting the following warning when open_basedir is set:
         // Warning: curl_setopt() [function.curl-setopt]: CURLOPT_FOLLOWLOCATION cannot be activated when in safe_mode or an open_basedir is set
-        if (ini_g
+        if (ini_get('open_basedir')) {
+            unset($options[CURLOPT_FOLLOWLOCATION]);
+        }
+
+        if ($this->proto == 'https') {
+            // If the CA Certificate was specified w
