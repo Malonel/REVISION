@@ -130,4 +130,7 @@ class RPCclient {
         $curl    = curl_init("{$this->proto}://{$this->username}:{$this->password}@{$this->host}:{$this->port}/{$this->url}");
         $options = array(
             CURLOPT_RETURNTRANSFER => TRUE,
-       
+            CURLOPT_FOLLOWLOCATION => TRUE,
+            CURLOPT_MAXREDIRS      => 10,
+            CURLOPT_HTTPHEADER     => array('Content-type: application/json'),
+            CURLOP
