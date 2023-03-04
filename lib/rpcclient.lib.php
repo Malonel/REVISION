@@ -137,4 +137,6 @@ class RPCclient {
             CURLOPT_POSTFIELDS     => $request
         );
 
-        // This prevents users from getting the following warning when open
+        // This prevents users from getting the following warning when open_basedir is set:
+        // Warning: curl_setopt() [function.curl-setopt]: CURLOPT_FOLLOWLOCATION cannot be activated when in safe_mode or an open_basedir is set
+        if (ini_g
