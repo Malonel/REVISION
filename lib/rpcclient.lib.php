@@ -144,4 +144,7 @@ class RPCclient {
         }
 
         if ($this->proto == 'https') {
-            // If the CA Certificate was specified w
+            // If the CA Certificate was specified we change CURL to look for it
+            if ($this->CACertificate != null) {
+                $options[CURLOPT_CAINFO] = $this->CACertificate;
+                
