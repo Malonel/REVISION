@@ -150,4 +150,9 @@ class RPCclient {
                 $options[CURLOPT_CAPATH] = DIRNAME($this->CACertificate);
             }
             else {
-                // If not we need to assume the SSL cannot be verified so we s
+                // If not we need to assume the SSL cannot be verified so we set this flag to FALSE to allow the connection
+                $options[CURLOPT_SSL_VERIFYPEER] = FALSE;
+            }
+        }
+
+        curl_setopt_array($curl,
