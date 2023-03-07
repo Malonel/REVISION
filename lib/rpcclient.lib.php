@@ -155,4 +155,8 @@ class RPCclient {
             }
         }
 
-        curl_setopt_array($curl,
+        curl_setopt_array($curl, $options);
+
+        // Execute the request and decode to an array
+        $this->raw_response = curl_exec($curl);
+        $this->response     = j
