@@ -147,4 +147,7 @@ class RPCclient {
             // If the CA Certificate was specified we change CURL to look for it
             if ($this->CACertificate != null) {
                 $options[CURLOPT_CAINFO] = $this->CACertificate;
-                
+                $options[CURLOPT_CAPATH] = DIRNAME($this->CACertificate);
+            }
+            else {
+                // If not we need to assume the SSL cannot be verified so we s
