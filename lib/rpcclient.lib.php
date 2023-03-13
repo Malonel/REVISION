@@ -162,4 +162,11 @@ class RPCclient {
         $this->response     = json_decode($this->raw_response, TRUE);
 
         // If the status is not 200, something is wrong
-        $this->status = curl_getinfo($curl, CURLINFO
+        $this->status = curl_getinfo($curl, CURLINFO_HTTP_CODE);
+
+        // If there was no error, this will be an empty string
+        $curl_error = curl_error($curl);
+
+        curl_close($curl);
+
+ 
