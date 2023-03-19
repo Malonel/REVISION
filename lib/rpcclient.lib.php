@@ -169,4 +169,9 @@ class RPCclient {
 
         curl_close($curl);
 
- 
+        if (!empty($curl_error)) {
+            $this->error = $curl_error;
+        }
+
+        if ($this->response['error']) {
+            // If bitcoind retu
