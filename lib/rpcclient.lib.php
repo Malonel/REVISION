@@ -181,4 +181,8 @@ class RPCclient {
             // If bitcoind didn't return a nice error message, we need to make our own
             switch ($this->status) {
                 case 400:
-                
+                    $this->error = 'HTTP_BAD_REQUEST';
+                    break;
+                case 401:
+                    $this->error = 'HTTP_UNAUTHORIZED';
+                    
