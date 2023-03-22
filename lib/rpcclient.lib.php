@@ -177,4 +177,8 @@ class RPCclient {
             // If bitcoind returned an error, put that in $this->error
             $this->error = $this->response['error']['message'];
         }
-        elseif ($this->status != 200) 
+        elseif ($this->status != 200) {
+            // If bitcoind didn't return a nice error message, we need to make our own
+            switch ($this->status) {
+                case 400:
+                
