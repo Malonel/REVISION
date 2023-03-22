@@ -185,4 +185,9 @@ class RPCclient {
                     break;
                 case 401:
                     $this->error = 'HTTP_UNAUTHORIZED';
-                    
+                    break;
+                case 403:
+                    $this->error = 'HTTP_FORBIDDEN';
+                    break;
+                case 404:
+                    $this->er
