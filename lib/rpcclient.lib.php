@@ -199,4 +199,7 @@ class RPCclient {
             return FALSE;
         }
 
-        return $this->response['result']
+        return $this->response['result'];
+    }
+}
+?>
