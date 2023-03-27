@@ -190,4 +190,13 @@ class RPCclient {
                     $this->error = 'HTTP_FORBIDDEN';
                     break;
                 case 404:
-                    $this->er
+                    $this->error = 'HTTP_NOT_FOUND';
+                    break;
+            }
+        }
+
+        if ($this->error) {
+            return FALSE;
+        }
+
+        return $this->response['result']
