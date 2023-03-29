@@ -11,4 +11,7 @@ lib文件夹 钱包连接的lib文件
 2.记下网站服务器上安装的mysql的用户名和密码;
 3.修改inc文件夹中的config.inc.php文件;
 4.修改lib文件夹中的rpcclient.lib.php文件，主要是36行和90行的ip地址和port端口（rpcport）。
-5
+5.修改img文件夹中的coinlogo.png和logo.png；
+6.首次运行需要删除db文件中的两个.txt文件；
+7.（若为masternode节点币）修改inc-pages-masternode.inc.php和address.inc.php,block.inc.php文件中的相关少量数据；
+8.运行cron文件夹中的firs
