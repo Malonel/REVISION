@@ -14,4 +14,7 @@ lib文件夹 钱包连接的lib文件
 5.修改img文件夹中的coinlogo.png和logo.png；
 6.首次运行需要删除db文件中的两个.txt文件；
 7.（若为masternode节点币）修改inc-pages-masternode.inc.php和address.inc.php,block.inc.php文件中的相关少量数据；
-8.运行cron文件夹中的firs
+8.运行cron文件夹中的first_run...文件，成功后，运行一次second_txs..文件；若要看富豪榜，需要运行一次third_who..文件。
+9.设置定时执行second_txs..和third_who..文件，一般1小时或4小时执行一次，按自己需求。
+
+/*******************************************/
